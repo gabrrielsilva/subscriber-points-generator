@@ -5,7 +5,7 @@ HEADER
 	9
 $HANDSEED
 	5
-27
+21
 	9
 $INSUNITS
 	70
@@ -31,7 +31,7 @@ TABLE
 	2
 LTYPE
 	5
-25
+1F
 	330
 0
 	100
@@ -43,7 +43,7 @@ LTYPE
 	5
 2
 	330
-25
+1F
 	100
 AcDbSymbolTableRecord
 	100
@@ -65,7 +65,7 @@ LTYPE
 	5
 3
 	330
-25
+1F
 	100
 AcDbSymbolTableRecord
 	100
@@ -95,7 +95,7 @@ LTYPE
 	5
 4
 	330
-25
+1F
 	100
 AcDbSymbolTableRecord
 	100
@@ -125,7 +125,7 @@ LTYPE
 	5
 6
 	330
-25
+1F
 	100
 AcDbSymbolTableRecord
 	100
@@ -147,7 +147,7 @@ LTYPE
 	5
 7
 	330
-25
+1F
 	100
 AcDbSymbolTableRecord
 	100
@@ -171,7 +171,7 @@ TABLE
 	2
 LAYER
 	5
-26
+20
 	330
 0
 	100
@@ -183,7 +183,7 @@ LAYER
 	5
 5
 	330
-26
+20
 	100
 AcDbSymbolTableRecord
 	100
@@ -351,7 +351,7 @@ TABLE
 	2
 BLOCK_RECORD
 	5
-22
+1C
 	330
 0
 	100
@@ -361,9 +361,9 @@ AcDbSymbolTable
 	0
 BLOCK_RECORD
 	5
-23
+1D
 	330
-22
+1C
 	100
 AcDbSymbolTableRecord
 	100
@@ -379,9 +379,9 @@ AcDbBlockTableRecord
 	0
 BLOCK_RECORD
 	5
-24
+1E
 	330
-22
+1C
 	100
 AcDbSymbolTableRecord
 	100
@@ -477,29 +477,9 @@ SECTION
 	2
 ENTITIES
 	0
-CIRCLE
-	5
-16
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.569817
-	20
--47.459806
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-17
+16
 	330
 11
 	100
@@ -509,7 +489,7 @@ AcDbText
 	8
 0
 	10
--23.569517
+-23.569817
 	20
 -47.459806
 	30
@@ -523,29 +503,9 @@ AcDbText
 	100
 AcDbText
 	0
-CIRCLE
-	5
-18
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.568053
-	20
--47.464957
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-19
+17
 	330
 11
 	100
@@ -555,7 +515,7 @@ AcDbText
 	8
 0
 	10
--23.567753
+-23.568053
 	20
 -47.464957
 	30
@@ -569,29 +529,9 @@ AcDbText
 	100
 AcDbText
 	0
-CIRCLE
-	5
-1A
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.570906
-	20
--47.462215
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-1B
+18
 	330
 11
 	100
@@ -601,7 +541,7 @@ AcDbText
 	8
 0
 	10
--23.570606
+-23.570906
 	20
 -47.462215
 	30
@@ -615,29 +555,9 @@ AcDbText
 	100
 AcDbText
 	0
-CIRCLE
-	5
-1C
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.572202
-	20
--47.460695
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-1D
+19
 	330
 11
 	100
@@ -647,7 +567,7 @@ AcDbText
 	8
 0
 	10
--23.571902
+-23.572202
 	20
 -47.460695
 	30
@@ -661,29 +581,9 @@ AcDbText
 	100
 AcDbText
 	0
-CIRCLE
-	5
-1E
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.570646
-	20
--47.458962
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-1F
+1A
 	330
 11
 	100
@@ -693,7 +593,7 @@ AcDbText
 	8
 0
 	10
--23.570346
+-23.570646
 	20
 -47.458962
 	30
@@ -707,29 +607,9 @@ AcDbText
 	100
 AcDbText
 	0
-CIRCLE
-	5
-20
-	330
-11
-	100
-AcDbEntity
-	100
-AcDbCircle
-	8
-0
-	10
--23.570447
-	20
--47.456937
-	30
-0
-	40
-0.0001
-	0
 TEXT
 	5
-21
+1B
 	330
 11
 	100
@@ -739,7 +619,7 @@ AcDbText
 	8
 0
 	10
--23.570147000000002
+-23.570447
 	20
 -47.456937
 	30
