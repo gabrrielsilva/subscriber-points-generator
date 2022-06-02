@@ -1,0 +1,17 @@
+{
+  "name": "dxf-writer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "dxf-writer": "^1.17.1"
+  }
+}
