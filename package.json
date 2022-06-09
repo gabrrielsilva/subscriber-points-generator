@@ -5,13 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node src/index.js"
+    "draw": "node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@fast-csv/parse": "^4.3.6",
-    "dxf-writer": "^1.17.1"
-  }
+    "chalk": "^4.1.2",
+    "dxf-writer": "^1.17.1",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {}
 }

@@ -1,6 +1,8 @@
-import csv from '@fast-csv/parse';
+import csvParse from '@fast-csv/parse';
+import chalk from 'chalk';
 import Drawing from 'dxf-writer';
 import fs from 'fs';
+import inquirer from 'inquirer';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -9,28 +11,52 @@ const __dirname = path.dirname(__filename);
 
 let drawing = new Drawing();
 
-const dxfFile = path.resolve(__dirname, '..', 'export', 'output.dxf');
-const csvFile = path.resolve(__dirname, '..', 'public', 'parse.csv')
+const colors = ['RED', 'GREEN', 'CYAN', 'BLUE', 'MAGENTA', 'WHITE', 'YELLOW'];
 
-fs.createReadStream(csvFile)
-  .pipe(csv.parse({ headers: false }))
-  .on('error', (error) => console.error(error))
-  .on('data', async (row) => {
-    const id = row[0],
-           x = row[1],
-           y = row[2];
+const csvDir = path.resolve(__dirname, '..', 'input');
+const csvFiles = fs.readdirSync(csvDir);
 
-    draw(id, Number(x), Number(y));
-  })
-  .on('end', async () => {
-    setTimeout(() => {
-      fs.writeFileSync(dxfFile, drawing.toDxfString())
-    }, 2000)
-  });
+drawing.setUnits('Millimeters');
 
-function draw(id, x, y) {
-  drawing.setUnits('Millimeters');
-  drawing.drawText(x, y, 0.00006, 0, id);
-  // drawing.drawText(x + 0.0002, y, 0.00006, 0, id);
-  // drawing.drawCircle(x, y, 0.0001);
-}
+(async () => {
+  for await (const csv of csvFiles) {
+    const question = (name, message, type, choices) => {
+      return { name, message, type, choices };
+    };
+
+    const selectedCsv = chalk.rgb(219, 40, 119)(`[${csv}]`);
+    const answer = await inquirer.prompt([
+      question('layerName', `Qual o nome da camada? ${selectedCsv}`),
+      question('layerColor', `Qual a cor da camada? ${selectedCsv}`, 'list', colors),
+      question('drawCircles', `Desenhar círculos? ${selectedCsv} ${chalk.gray('[S/N]')}`),
+    ]);
+    const { layerName, layerColor, drawCircles } = answer;
+
+    if (layerName) {
+      drawing
+        .addLayer(layerName, Drawing.ACI[layerColor ? layerColor : 'WHITE'], 'CONTINUOUS')
+        .setActiveLayer(layerName);
+    }
+
+    fs.createReadStream(path.resolve(csvDir, csv))
+      .pipe(csvParse.parse({ headers: false }))
+      .on('error', (error) => console.error(error))
+      .on('data', async (row) => {
+        const name = row[0];
+        const x = row[1];
+        const y = row[2];
+
+        drawing.drawText(x, y, 0.000014, 0, name);
+
+        if (drawCircles === 'S') {
+          drawing.drawCircle(x, y, 0.00002);
+        }
+      });
+  }
+
+  const dxfFile = path.resolve(__dirname, '..', 'export', 'output.dxf');
+
+  setTimeout(() => {
+    fs.writeFileSync(dxfFile, drawing.toDxfString());
+  }, 3000);
+})();
